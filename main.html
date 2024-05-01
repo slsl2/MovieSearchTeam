@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="./src/script.js" type="module"></script>
+    <script type="module" src="./src/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -108,8 +108,13 @@
 
         <div id="sort-options">
             <!-- 정렬 영역 -->
-            <button id="sort-by-rating">평점순 정렬</button>
-            <button id="sort-by-title">제목순 정렬</button>
+            <span id="sort-span">정렬</span>
+            <select id="sort-select">
+                <option value="sort-by-popularity">인기순 (기본)</option>
+                <option value="sort-by-title">제목 오름차순</option>
+                <option value="sort-by-date">최신 개봉순</option>
+                <option value="sort-by-rating">평점 오름차순</option>
+            </select>
         </div>
 
         <div id="container" class="innerwrap">
@@ -157,7 +162,6 @@
                 },
             });
         </script>
-
 </body>
 
 </html>
