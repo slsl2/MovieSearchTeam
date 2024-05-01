@@ -41,7 +41,9 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    globalMovieData = data["results"]; // 데이터 저장
+    globalMovieData = data["results"].sort(
+      (a, b) => b.popularity - a.popularity // 디폴트 정렬 = 인기순
+    ); // 데이터 저장
     displayMovies(globalMovieData); // 초기 영화 목록 표시
   })
   .catch((err) => console.error(err));
@@ -75,13 +77,24 @@ function addCard(movie) {
   mycards.append(card);
 }
 
-document.getElementById("sort-by-rating").addEventListener("click", () => {
-  globalMovieData.sort((a, b) => b.vote_average - a.vote_average);
-  displayMovies(globalMovieData);
-});
-
-document.getElementById("sort-by-title").addEventListener("click", () => {
-  globalMovieData.sort((a, b) => a.title.localeCompare(b.title));
+document.getElementById("sort-select").addEventListener("change", (event) => {
+  const selectedOption = event.target.value;
+  switch (selectedOption) {
+    case "sort-by-popularity":
+      globalMovieData.sort((a, b) => b.popularity - a.popularity);
+      break;
+    case "sort-by-title":
+      globalMovieData.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "sort-by-date":
+      globalMovieData.sort((a, b) =>
+        b.release_date.localeCompare(a.release_date)
+      );
+      break;
+    case "sort-by-rating":
+      globalMovieData.sort((a, b) => b.vote_average - a.vote_average);
+      break;
+  }
   displayMovies(globalMovieData);
 });
 
