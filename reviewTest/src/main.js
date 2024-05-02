@@ -6,6 +6,7 @@ if (localStorage.getItem("defaultData")) {
 
 if (localStorage.getItem("reviewData")) {
   let getData = JSON.parse(localStorage.getItem("reviewData"));
+  // 매개변수로 data, index를 받아옴
   getData.forEach(function(data,index) {
     let storageCard = document.createElement("div");
     storageCard.className = "review-card";
@@ -102,6 +103,7 @@ function verifyPasswordAndDelete(index, password) {
   } else {
       alert('비밀번호를 입력해주세요');
   }
+  alert('삭제완료')
 }
 // 렌더링
 function render() {
@@ -157,4 +159,5 @@ function verifyPasswordAndEdit(index, password){
   } else {
     alert('비밀번호가 일치하지 않습니다')
   }
+  alert('수정완료')
 }
