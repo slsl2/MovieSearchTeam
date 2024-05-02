@@ -106,21 +106,19 @@
             <div class="swiper-pagination"></div>
         </div>
 
-        <div id="sort-options">
-            <!-- 정렬 영역 -->
-            <span id="sort-span">정렬</span>
-            <select id="sort-select">
-                <option value="sort-by-popularity">인기순 (기본)</option>
-                <option value="sort-by-title">제목 오름차순</option>
-                <option value="sort-by-date">최신 개봉순</option>
-                <option value="sort-by-rating">평점 오름차순</option>
-            </select>
-        </div>
-
         <div id="container" class="innerwrap">
             <!-- 카드 영역 -->
             <div id="title-area" class="title-area">
                 <span class="label">파인더에서 원하는 영화를 찾아봐!</span>
+                <div id="sort-options">
+                    <!-- 정렬 영역 -->
+                    <select id="sort-select">
+                        <option class="option-item" value="sort-by-popularity">인기순 (기본)</option>
+                        <option class="option-item" value="sort-by-title">제목 오름차순</option>
+                        <option class="option-item" value="sort-by-date">최신 개봉순</option>
+                        <option class="option-item" value="sort-by-rating">평점 오름차순</option>
+                    </select>
+                </div>
             </div>
             <div id="mycards" class="row row-cols-1 row-cols-md-4 g-4">
                 <!--div class="col">
