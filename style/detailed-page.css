@@ -1,149 +1,94 @@
 :root {
-    --main: #955DD5;
-    --bg: #141420;
-    --desc:#717171;
+  --main: #955dd5;
+  --bg: #141420;
+  --desc: #717171;
 }
 
 html,
 body {
-    font: 16px;
-    background: var(--bg);
+  font: 16px;
+  background: var(--bg);
 }
 
 /* movie-info */
 
-.movie-img{
-    width: 100vw;
-    height: 550px;
-    position: relative;
-    background-image: url('https://cdn.newsculture.press/news/photo/202402/542264_680656_5828.jpg');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;    
+.movie-img {
+  width: 100vw;
+  height: 550px;
+  position: relative;
+  background-image: url("https://cdn.newsculture.press/news/photo/202402/542264_680656_5828.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
 }
 
-.movie-img::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    opacity: 0.5;
-    background-color: #000;
+.movie-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  opacity: 0.5;
+  background-color: #000;
 }
 
-.movie-img .back{
-    padding-top: 50px;
-    padding-left: 180px;
-    position: absolute;
+.movie-img .back {
+  padding-top: 50px;
+  padding-left: 180px;
+  position: absolute;
 }
 
-.movie-img .back a{
-    text-decoration-line: none;
-    color: #fff;
-    cursor: pointer;
+.movie-img .back a {
+  text-decoration-line: none;
+  color: #fff;
+  cursor: pointer;
 }
 
-.movie-img .movie-info{
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 300px;
-    color: #fff;
-    margin: 250px 180px 10px;
+.movie-img .movie-info {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 280px;
+  max-height: 280px;
+  color: #fff;
+  margin: 250px 180px 10px;
+  overflow: auto;
 }
 
-.movie-img .movie-info .movie-info-list{
-    display: flex;
-    width: 300px;
-    align-items: center;
+.movie-img .movie-info .movie-info-list {
+  display: flex;
+  width: 300px;
+  align-items: center;
 }
 
-.movie-img .movie-info .movie-info-list *{
-    border-right: 1px solid #fff;
-    justify-content: center;
-    padding: 0 10px;
+.movie-img .movie-info .movie-info-list * {
+  border-right: 1px solid #fff;
+  justify-content: center;
+  padding: 0 10px;
 }
 
-.movie-img .movie-info .movie-info-list :first-child{
-    padding-left: 0;
+.movie-img .movie-info .movie-info-list :first-child {
+  padding-left: 0;
 }
 
-.movie-img .movie-info .movie-info-list :last-child{
-    border-right: transparent;
+.movie-img .movie-info .movie-info-list :last-child {
+  border-right: transparent;
 }
 
-.movie-img .movie-info .review{
-    width: 200px;
-    height: 40px;
-    margin: 20px 0 10px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color: #955DD5;
-    color: #fff;
-    cursor: pointer;
+.movie-img .movie-info .review {
+  width: 200px;
+  height: 40px;
+  margin: 20px 0 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #955dd5;
+  color: #fff;
+  cursor: pointer;
 }
 
-.movie-img .movie-info .review:hover{
-    color: #955DD5;
-    background-color: #fff;
-    transition: .5s;
-}
-
-/* movie-detail */
-.detail-container{
-    color: #fff;
-    margin: 20px 180px;
-}
-
-.detail-container .movie-detail{
-    display: grid;
-    grid-template-columns: 400px 300px;
-}
-
-.detail-container h2{
-    margin: 70px 0 50px;
-}
-
-.detail-container .movie-detail img{
-    background-color: #aaa;
-    width: 230px;
-    height: 300px;
-    border-radius: 20px;
-    margin-right: 20px;
-}
-
-.detail-container .movie-detail .movie-detail-info{
-    overflow-x: hidden;
-}
-
-.detail-container .movie-detail .movie-detail-info .movie-title{
-    font-weight: 700;
-    margin-top: 10px;
-}
-
-.detail-container .movie-detail .movie-detail-info .movie-title .data-title{
-    margin-top: 15px;
-    font-weight: 400;
-}
-
-.detail-container .movie-detail .movie-detail-info .movie-detail-info-list{
-    margin: 40px 0 10px;
-}
-
-.detail-container .movie-detail .movie-detail-info .movie-detail-info-list *{
-    display: flex;
-    flex-direction: row;
-}
-
-.detail-container .movie-detail .movie-detail-info .movie-detail-info-list .movie{
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.detail-container .movie-detail .movie-detail-info .movie-detail-info-list .data{
-    margin-left: 150px;
-    font-weight: 400;
-    position: absolute;
+.movie-img .movie-info .review:hover {
+  color: #955dd5;
+  background-color: #fff;
+  transition: 0.5s;
 }
