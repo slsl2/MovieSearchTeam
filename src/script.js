@@ -33,20 +33,27 @@ const options = {
   },
 };
 
+let globalMovieData = []; // 전역 변수로 영화 데이터를 저장
+
 fetch(
   "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1",
   options
 )
   .then((response) => response.json())
   .then((data) => {
-    let movieList = data["results"];
 
-    movieList.forEach((movie) => {
-      addCard(movie);
-    });
+    globalMovieData = data["results"].sort(
+      (a, b) => b.popularity - a.popularity // 디폴트 정렬 = 인기순
+    ); // 데이터 저장
+    displayMovies(globalMovieData); // 초기 영화 목록 표시
   })
-  .then(searchMovie)
   .catch((err) => console.error(err));
+
+function displayMovies(movieList) {
+  const cardList = document.getElementById("mycards");
+  cardList.innerHTML = ""; // 기존 카드를 초기화
+  movieList.forEach(addCard);
+}
 
 function addCard(movie) {
   let image = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
@@ -70,5 +77,27 @@ function addCard(movie) {
   card.addEventListener("click", () => alert(`영화 id : ${movie.id}`));
   mycards.append(card);
 }
+
+
+document.getElementById("sort-select").addEventListener("change", (event) => {
+  const selectedOption = event.target.value;
+  switch (selectedOption) {
+    case "sort-by-popularity":
+      globalMovieData.sort((a, b) => b.popularity - a.popularity);
+      break;
+    case "sort-by-title":
+      globalMovieData.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "sort-by-date":
+      globalMovieData.sort((a, b) =>
+        b.release_date.localeCompare(a.release_date)
+      );
+      break;
+    case "sort-by-rating":
+      globalMovieData.sort((a, b) => b.vote_average - a.vote_average);
+      break;
+  }
+  displayMovies(globalMovieData);
+});
 
 searchMovie();
