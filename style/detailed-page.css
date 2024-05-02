@@ -12,17 +12,13 @@ body {
 
 /* movie-info */
 
-.movie-img {
+.container {
   width: 100vw;
   height: 550px;
   position: relative;
-  background-image: url("https://cdn.newsculture.press/news/photo/202402/542264_680656_5828.jpg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
 }
 
-.movie-img::before {
+.container::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -32,53 +28,76 @@ body {
   background-color: #000;
 }
 
-.movie-img .back {
-  padding-top: 50px;
-  padding-left: 180px;
+.container .back {
+  padding-top: 30px;
+  padding-left: 10%;
   position: absolute;
+  width: 90%;
+  height: 15px;
+  margin-bottom: 0;
 }
 
-.movie-img .back a {
+.container .back a {
   text-decoration-line: none;
   color: #fff;
   cursor: pointer;
 }
 
-.movie-img .movie-info {
-  content: "";
-  position: absolute;
+.container .movie-wrap {
+  display: flex;
+  flex-direction: row;
+  height: 550px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .movie-wrap .movie-img {
+  position: relative;
+  width: 250px;
+  object-fit: contain;
+  border-radius: 20px;
+  margin: 50px 100px 10px;
+}
+
+.container .movie-wrap .movie-info {
+  position: relative;
   width: 50%;
   height: 280px;
   max-height: 280px;
   color: #fff;
-  margin: 250px 180px 10px;
-  overflow: auto;
+  padding-top: 150px;
 }
 
-.movie-img .movie-info .movie-info-list {
+.container .movie-wrap .movie-info h1 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.container .movie-wrap .movie-info-list {
   display: flex;
   width: 300px;
   align-items: center;
 }
 
-.movie-img .movie-info .movie-info-list * {
+.container .movie-wrap .movie-info-list * {
   border-right: 1px solid #fff;
   justify-content: center;
   padding: 0 10px;
 }
 
-.movie-img .movie-info .movie-info-list :first-child {
+.container .movie-wrap .movie-info .movie-info-list :first-child {
   padding-left: 0;
 }
 
-.movie-img .movie-info .movie-info-list :last-child {
+.container .movie-wrap .movie-info .movie-info-list :last-child {
   border-right: transparent;
 }
 
-.movie-img .movie-info .review {
+.container .movie-wrap .movie-info .review {
   width: 200px;
   height: 40px;
-  margin: 20px 0 10px;
+  margin: 20px 0 20px;
   border-radius: 10px;
   border: none;
   outline: none;
@@ -87,10 +106,17 @@ body {
   cursor: pointer;
 }
 
-.movie-img .movie-info .review:hover {
+.container .movie-wrap .movie-info .review:hover {
   color: #955dd5;
   background-color: #fff;
   transition: 0.5s;
+}
+
+.container .movie-wrap .movie-info p {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* 리뷰 */
