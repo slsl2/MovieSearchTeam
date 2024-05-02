@@ -52,7 +52,6 @@ let getData = JSON.parse(localStorage.getItem("reviewData"));
 
 function setReviewData() {
 
-  // 각각 input창에 작성한 내용 가져오기
   let textId = document.getElementById("id-text").value;
   let textPassword = document.getElementById("password-text").value;
   let textReview = document.getElementById("review-text").value;
@@ -96,6 +95,7 @@ function verifyPasswordAndDelete(index, password) {
       if (password === getData[index].password) {
           getData.splice(index, 1);
           localStorage.setItem("reviewData", JSON.stringify(getData));
+          alert('삭제완료')
           render();
       } else {
           alert('비밀번호가 일치하지 않습니다');
@@ -103,7 +103,6 @@ function verifyPasswordAndDelete(index, password) {
   } else {
       alert('비밀번호를 입력해주세요');
   }
-  alert('삭제완료')
 }
 // 렌더링
 function render() {
@@ -151,6 +150,7 @@ function verifyPasswordAndEdit(index, password){
       if(newText !== null) {
         getData[index].review = newText;
         localStorage.setItem("reviewData", JSON.stringify(getData));
+        alert('수정완료')
         render()
       }
     } else {
@@ -159,5 +159,4 @@ function verifyPasswordAndEdit(index, password){
   } else {
     alert('비밀번호가 일치하지 않습니다')
   }
-  alert('수정완료')
 }
