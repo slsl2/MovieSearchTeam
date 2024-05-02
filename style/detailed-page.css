@@ -57,6 +57,7 @@ body {
   object-fit: contain;
   border-radius: 20px;
   margin: 50px 100px 10px;
+  opacity: 0.7;
 }
 
 .container .movie-wrap .movie-info {
@@ -117,4 +118,5 @@ body {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  line-height: 130%;
 }
