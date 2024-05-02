@@ -9,11 +9,6 @@ const options = {
 };
 
 // 영화 장르 ID 정보
-fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
-
 fetch(
   "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1",
   options
