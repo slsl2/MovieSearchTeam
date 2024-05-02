@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/detailed-page.css" />
+    <script defer src="./src/detailedPage.js"></script>
+  </head>
+  <body>
+    <header id="top">
+      <div class="header-wrap">
+        <h2 class="logo"><a href="/main.html">Finder</a></h2>
+        <nav>
+          <ul id="gnb" class="gnb">
+            <li><a href="" class="select">홈</a></li>
+            <li><a href="">영화</a></li>
+            <li><a href="">TV</a></li>
+            <li><a href="">개봉예정</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- movie-info -->
+    <div class="container">
+      <div class="back">
+        <a href="/main.html">< 뒤로가기</a>
+      </div>
+      <div class="movie-wrap">
+        <img src="" alt="" class="movie-img" />
+        <div class="movie-info">
+          <h1>제목</h1>
+          <div class="movie-info-list">
+            <div class="genre"></div>
+            <div class="release-date"></div>
+          </div>
+          <button class="review">리뷰 보러가기</button>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="review-wrap">
+      <div id="review-write-wrap">
+        <span class="title-area-review">영화 리뷰</span>
+        <form id="review-form">
+          <div id="review-form-top">
+            <input type="text" id="author" placeholder="작성자" />
+            <input type="password" id="password" placeholder="비밀번호" />
+          </div>
+          <div id="review-form-bottom">
+            <textarea
+              id="review"
+              placeholder="간단한 한줄평을 남겨주세요!"
+            ></textarea>
+            <button type="submit">확인</button>
+          </div>
+        </form>
+      </div>
+      <div class="page-line"></div>
+      <div id="review-list-wrap">
+        <ul>
+          <li class="review-li">
+            <div class="review-list-top">
+              <span class="review-author">작성자1</span>
+            </div>
+            <div class="review-list-bottom">
+              <p class="review-content">너무 재밌어여 짱짱짱짱짱</p>
+              <div class="review-settings">
+                <div class="review-buttons">
+                  <button class="update-btn">수정</button>
+                  <div class="vertical-line"></div>
+                  <button class="delete-btn">삭제</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
