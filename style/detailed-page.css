@@ -92,3 +92,163 @@ body {
   background-color: #fff;
   transition: 0.5s;
 }
+
+/* 리뷰 */
+
+#review-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.title-area-review {
+  font-size: 24px;
+  line-height: 36px;
+  color: #fff;
+}
+
+/* 리뷰 작성 */
+
+#review-write-wrap {
+  width: 80%;
+  max-width: 1440px;
+}
+
+#review-form-top {
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+#review-form input {
+  width: 180px;
+  margin-top: 16px;
+}
+
+#review-form textarea {
+  width: 100%;
+  resize: none;
+  height: 50px;
+}
+
+#review-form input,
+#review-form textarea {
+  background: none;
+  border: rgba(255, 255, 255, 0.3) 1px solid;
+  /* padding: 10px; */
+  border-radius: 10px;
+  color: white;
+  box-sizing: border-box;
+  padding: 14px;
+  margin-right: 16px;
+  font-size: 14px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+#review-form-bottom {
+  display: flex;
+  align-items: center;
+}
+
+#review-form-bottom button {
+  color: white;
+  background-color: var(--main);
+  height: 50px;
+  width: 120px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#review-form-bottom button:hover {
+  cursor: pointer;
+  color: var(--main);
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+.page-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+/* 리뷰 리스트 */
+
+#review-list-wrap {
+  width: 80%;
+  max-width: 1440px;
+  display: flex;
+  margin-bottom: 200px;
+}
+
+#review-list-wrap ul {
+  width: 100%;
+}
+
+.review-li {
+  margin-bottom: 50px;
+}
+
+.review-author {
+  color: #e2cafe;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 200%;
+}
+
+.review-list-bottom {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-content {
+  width: 500px;
+}
+
+.review-content {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.review-settings {
+  display: flex;
+  height: fit-content;
+}
+
+.review-buttons {
+  display: flex;
+}
+
+#password-check {
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 12px;
+  margin-right: 10px;
+  width: 86px;
+  border-radius: 5px;
+  color: #010101;
+  border: none;
+}
+
+.review-buttons button {
+  color: white;
+  padding: 5px;
+}
+
+.review-buttons button:hover {
+  cursor: pointer;
+  color: #010101;
+}
+
+.review-buttons .vertical-line {
+  background-color: #fff;
+  width: 1px;
+  box-sizing: content-box;
+  margin: 5px;
+}
