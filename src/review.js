@@ -1,4 +1,4 @@
-if (localStorage.getItem("reviewData")) {
+  if (localStorage.getItem("reviewData")) {
     let getData = JSON.parse(localStorage.getItem("reviewData"));
     // 매개변수로 data, index를 받아옴
     getData.forEach(function(data,index) {
