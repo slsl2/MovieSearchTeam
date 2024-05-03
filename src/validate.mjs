@@ -2,8 +2,14 @@
 //[테스트 로직, 검사 결과 코드, 검사 결과 디폴트 메시지]
 const validators = initializeValidators();
 
-//반환 형식: [result code, result default message]
-//예시: ['not-fit-1-10', '1자 이상 10자 이하로 입력해주세요.']
+/*
+* 반환 형식: [result code, result default message]
+* 예시: ['not-fit-1-10', '1자 이상 10자 이하로 입력해주세요.']
+*
+* validatorsToUse에 추가된 validator 순서대로  
+* 검증이 진행되고 먼저 미통과된 검증이 있으면 
+* 그 검증을 반환하고 나머지 검증은 진행되지 않습니다.
+*/
 export function validateSearch(text) {
 	const validatorsToUse = [
 		validators['hacker'],
@@ -25,9 +31,9 @@ export function validateReview(text) {
 
 export function validatePassword(text) {
 	const validatorsToUse = [
+		validators['has-whitespace'],
 		validators['hacker'],
 		validators['not-fit-4-20'],
-		validators['has-whitespace'],
 		validators['lack-alphanumspecial'],
 	];
 
@@ -36,17 +42,20 @@ export function validatePassword(text) {
 
 export function validateNickname(text) {
 	const validatorsToUse = [
-		validators['hacker'],
-		validators['bad-word'],
-		validators['not-fit-4-20'],
 		validators['has-whitespace'],
+		validators['not-fit-4-20'],
 		validators['has-non-alphanum-char'],
+		validators['bad-word'],
+		validators['hacker'],
 	];
 
 	return executeValidators(validatorsToUse, text);
 }
 
 function executeValidators(validators, testValue) {
+	//전처리
+	testValue = testValue.trim();
+
 	for (const validator of validators) {
 		if (!validator) {
 			const e = new Error('존재하지 않는 validator 사용 ' +
@@ -107,19 +116,21 @@ function initializeValidators() {
 				/[a-zA-Z]/.test(text) &&
 				/[!@#$%^&*()_=+?\-]/.test(text)),
 			'lack-alphanumspecial',
-			'숫자, 영문자, 특수문자(!@#$%^&*()_=+?-)를 모두 포함해주세요.',
+			'숫자, 영문자, 특수문자(!@#$%^&*()_=+?- 중)를 모두 포함해주세요.',
 		],
 	};
 }
 
-//demonstrate();
-function demonstrate() {
+//test();
+function test() {
 	logger(validateReview, '1');
 	logger(validateReview, '<script>');
 	logger(validateReview, '나쁜말');
+	logger(validateReview, '          ');
 	console.log('');
 
 	logger(validateSearch, '');
+	logger(validateSearch, '  ');
 	logger(validateSearch, '<hackcode>');
 	console.log('');
 
@@ -133,11 +144,14 @@ function demonstrate() {
 	logger(validateNickname, 'abc!@#');
 	logger(validateNickname, '나쁜말');
 	logger(validateNickname, '나');
+	logger(validateNickname, '    z    ');
+
 	console.log('');
 
 	function logger(validateFn, param) {
-		const [code , msg] = validateFn(param);
+		const [code, msg] = validateFn(param);
 		console.log(`${validateFn.name}('${param}')`);
 		console.log(`  => ['${code}', '${msg}']`);
 	}
 }
+
