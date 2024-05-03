@@ -11,7 +11,7 @@ if(localStorage.getItem('reviewData')){
       let newLi = createReview('li','review-li');
       newUl.appendChild(newLi)
       let newDiv = createReview('div','review-list-top');
-      newLi.appendChild(newDiv);
+      newLi.appendChild(newDiv)
       let newSpan = createReview('span','review-author',data.id);
       newDiv.appendChild(newSpan)
       let newBtnWrapDiv = createReview('div','review-list-bottom');
