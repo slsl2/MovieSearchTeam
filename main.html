@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script type="module" src="./src/script.js"></script>
+    <script src="./src/carousel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -50,61 +50,28 @@
 
         <div id="movieContainer">
         <!-- 슬라이드 영역 -->
-        <div id="swipe" class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="slide-txt">
-                        <h1>위시</h1>
-                        <span>지금이야!</span>
-                        <p>우리의 소원이 이루어질 시간</p>
-                    </div>
-                    <img src="assets/main3.png" alt="" class="slide-img">
-                </div>
+        <div id="main-banner" class="swiper-container banner">
+            <div class="main01-nav">
 
-                <div class="swiper-slide">
-                    <div class="slide-txt">
-                        <h1>웡카</h1>
-                        <span>꿈에서 시작된</span>
-                        <p>가장 달콤한 이야기</p>
-                    </div>
-                    <img src="assets/main4.png" alt="" class="slide-img">
-                </div>
-                
-                <div class="swiper-slide">
-                    <div class="slide-txt">
-                        <h1>
-                            쿵푸팬더4
-                            <span>드림윅스 레전드 시리즈</span>
-                        </h1>
-                        <p>잭블랙은 오랜만이지</p>
-                    </div>
-                    <img src="assets/main5.png" alt="" class="slide-img">
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-txt">
-                        <h1>
-                            연애남매
-                            <span>내 혈육의 로맨스</span>
-                        </h1>
-                        <p>남매의 연애를 직관하다</p>
-                    </div>
-                    <img src="assets/main1.png" alt="" class="slide-img">
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-txt">
-                        <h1>
-                            기생수
-                            <span>더 그레이</span>
-                        </h1>
-                        <p>인간들 사이에 완벽히 파고들어라</p>
-                    </div>
-                    <img src="assets/main2.png" alt="" class="slide-img">
-                </div>
+                <!-- prev, next -->
+                <button class="swiper-button-next"></button>
+                <button class="swiper-button-prev"></button>
+        
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+
+            <div id="wrapper" class="swiper-wrapper-banner">
+
+                <!-- <div class="swiper-slide">
+                    <div class="slide-txt">
+                        <h1 class="slide-title"></h1>
+                        <p class="slide-en-title"></p>
+                    </div>
+                    <img src="" alt="banner" class="banner-img">
+                </div> -->
+            </div>
+
         </div>
+
 
         <div id="container" class="innerwrap">
             <!-- 카드 영역 -->
@@ -136,30 +103,6 @@
         </div>
     </div>
 
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-        <!-- Initialize Swiper -->
-        <script>
-            let swiper = new Swiper(".mySwiper", {
-                loop: true,
-                autoplay: {
-                   delay: 5000,
-                },
-                centeredSlides: true,
-                slidesPerView: 1.25,
-                spaceBetween: 50,
-                loopAdditionalSlides: 1,
-
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                },
-            });
-        </script>
 </body>
 
 </html>
