@@ -74,7 +74,7 @@ function addCard(movie) {
     </div>
     `;
 
-  card.addEventListener("click", () => alert(`영화 id : ${movie.id}`));
+  card.addEventListener("click", () => window.location.href = `detailed-page.html?id=${movie.id}`);
   mycards.append(card);
 }
 
