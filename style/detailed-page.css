@@ -13,8 +13,7 @@ body {
 /* movie-info */
 
 .container {
-  width: 100vw;
-  height: 550px;
+  height: fit-content;
   position: relative;
 }
 
@@ -46,9 +45,8 @@ body {
 .container .movie-wrap {
   display: flex;
   flex-direction: row;
-  height: 550px;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 }
 
 .container .movie-wrap .movie-img {
@@ -56,22 +54,22 @@ body {
   width: 250px;
   object-fit: contain;
   border-radius: 20px;
-  margin: 50px 100px 10px;
+  margin: 60px 0 50px 0;
+  margin-right: 5%;
 }
 
 .container .movie-wrap .movie-info {
   position: relative;
   width: 50%;
-  height: 280px;
-  max-height: 280px;
   color: #fff;
-  padding-top: 150px;
+  margin-bottom: 50px;
 }
 
 .container .movie-wrap .movie-info h1 {
   font-size: 38px;
   font-weight: 700;
   margin-bottom: 20px;
+  line-height: 140%;
 }
 
 .container .movie-wrap .movie-info-list {
@@ -117,6 +115,7 @@ body {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  line-height: 160%;
 }
 
 /* 리뷰 */
@@ -210,7 +209,7 @@ body {
   max-width: 1440px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 #review-list-wrap ul {
@@ -235,7 +234,8 @@ body {
 }
 
 .review-content {
-  width: 500px;
+  width: 70%;
+  max-width: 500px;
 }
 
 .review-content {
@@ -278,4 +278,56 @@ body {
   width: 1px;
   box-sizing: content-box;
   margin: 5px;
+}
+
+@media (max-width: 800px) {
+  .container .movie-wrap {
+    scale: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container .movie-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scale: 80%;
+  }
+  .container .movie-wrap .movie-img {
+    width: 100%;
+    margin: 0 0 50px 0;
+  }
+  .container .movie-wrap .movie-info h1 {
+    font-size: 30px;
+  }
+  .container .movie-wrap .movie-info {
+    width: 100%;
+  }
+  #review-form-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  #review-form textarea {
+    margin: 0 0 30px 0;
+  }
+  #review-form-bottom button {
+    width: 100%;
+  }
+  .review-content {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-list-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+  .review-settings {
+    margin-top: 10px;
+  }
+  button.update-btn {
+    padding-left: 0;
+  }
 }
