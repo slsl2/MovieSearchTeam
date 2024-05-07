@@ -62,7 +62,7 @@ function initSlider(movieList) {
 
         function updateSliderPosition() {
 
-            wrapper.style.transform = `translateX(${-size * currentIndex + 320}px)`;
+            wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
 
         }
 
@@ -94,7 +94,7 @@ function initSlider(movieList) {
                 //첫번째 인덱스로 돌아감
                 currentIndex = 1;
                 wrapper.style.transition = "0s";
-                wrapper.style.transform = `translateX(${-size * currentIndex + 300}px)`;
+                wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
             }
 
             // 첫번째 인덱스일 경우
@@ -102,7 +102,7 @@ function initSlider(movieList) {
                 // 마지막 슬라이드 이전 슬라이드
                 currentIndex = slideCount - 2;
                 wrapper.style.transition = "0s";
-                wrapper.style.transform = `translateX(${-size * currentIndex + 300}px)`;
+                wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
 
             }
         });
