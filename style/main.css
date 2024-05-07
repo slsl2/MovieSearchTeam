@@ -179,7 +179,8 @@ button .xi-search {
 
   .swiper-slide > img {
     width: 100%;
-    object-fit: cover
+    object-fit: cover;
+    filter: brightness(0.5);
   }
   
   .swiper-wrapper-banner {
@@ -196,8 +197,8 @@ button .xi-search {
     float: left;
     position: relative;
     overflow: hidden;
-    width: 1250px;
-    height: 550px;;
+    width: 100%;
+    height: 650px;;
     padding: 0 10px;
     border-radius: 30px;
     
@@ -218,8 +219,8 @@ button .xi-search {
   .slide-txt{
     position: absolute;
     top:80%;
-    left: 15%;
-    transform: translate(-15%, -50%);
+    left: 25%;
+    transform: translate(-25%, -50%);
     color:#fff;
     font-size: 45px;
     font-weight: bolder;

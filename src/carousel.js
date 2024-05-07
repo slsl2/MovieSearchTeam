@@ -61,9 +61,7 @@ function initSlider(movieList) {
         let currentIndex = 1;
 
         function updateSliderPosition() {
-
             wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
-
         }
 
 
@@ -85,6 +83,16 @@ function initSlider(movieList) {
 
         }
 
+
+        // 브라우저 크기가 조정될 때마다 트리거되는 이벤트 리스너, resize
+        // 슬라이더의 위치가 다시 계산되고 새창 크기에 맞게 업데이트 되도록 하기위한 기능
+        window.addEventListener("resize", function () {
+        //슬라이드 너비 가져옴 offsetWidth(컨텐츠, 패팅, 테두리 등 요소의 너비)를 사용
+        slideWidth = swiper_slide.offsetWidth;
+        console.log(slideWidth);
+        //업데이트 된 slideWidth 값을 확인하고 아래 함수를 호출해서 새너비를 기준으로 슬라이드 위치를 변경
+        updateSliderPosition();
+      });
 
 
         //슬라이드 무한루프
