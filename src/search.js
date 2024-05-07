@@ -27,7 +27,7 @@ export const searchMovie = () => {
     const [code, msg] = validateFn(param);
     const searchValidation = document.querySelector("#search-validation");
     msg
-      ? (searchValidation.textContent = `['${msg}']`)
+      ? (searchValidation.textContent = `${msg}`)
       : (searchValidation.textContent = "");
   }
 };
