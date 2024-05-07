@@ -119,7 +119,6 @@ function verifyPasswordAndEdit(id, password) {
       alert('비밀번호가 일치하지 않거나 해당 리뷰가 없습니다');
   }
 }
-
 window.onload = function() {
   renderReviewsForMovie();
 };
