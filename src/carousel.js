@@ -54,7 +54,7 @@ function initSlider(movieList) {
 
 
         const slideCount = 20; //array(20)
-        //슬라이드 0번째에 있는 컨텐츠의 크기를 확인 => 이미지 사이즈 : 1250px / margin : 0 10px
+        //슬라이드 0번째에 있는 컨텐츠의 크기를 확인 => 이미지 사이즈 : 1250px 
         const size = swiper_slide.clientWidth;
 
         //currentIndex = 1로 초기값 슬라이드[1]
@@ -62,15 +62,8 @@ function initSlider(movieList) {
 
         function updateSliderPosition() {
 
-            if (matchMedia("screen and (max-width: 479px)")) {
-                wrapper.style.transform = `translateX(${-size * currentIndex + 300}px)`;
-            }
-            if (matchMedia("screen and (max-width: 1024px)")) {
-                wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
-            }
-            if (matchMedia("screen and (max-width: 1920px)")) {
-                wrapper.style.transform = `translateX(${-size * currentIndex + 300}px)`;
-            }
+            wrapper.style.transform = `translateX(${-size * currentIndex + 320}px)`;
+
         }
 
 
