@@ -26,14 +26,7 @@
         <header id="top">
             <div class="header-wrap">
                 <h2 class="logo"><a onclick="window.location.reload()">Finder</a></h2>
-                <nav>
-                    <ul id="gnb" class="gnb">
-                        <li><a href="" class="select">홈</a></li>
-                        <li><a href="" >영화</a></li>
-                        <li><a href="" >TV</a></li>
-                        <li><a href="" >개봉예정</a></li>
-                    </ul>
-                </nav>
+
                 <!-- 검색 영역 -->
                 <div class="search-wrap">
                     <div id="search">
@@ -42,53 +35,50 @@
                         <button type="button" id="searchBtn"><i class="xi-search"></i></button>
                     </div>
                 </div>
-                <!--  -->
-
             </div>
         </header>
 
-
         <div id="movieContainer">
-        <!-- 슬라이드 영역 -->
-        <div id="main-banner" class="swiper-container banner">
-            <div class="main01-nav">
+            <!-- 슬라이드 영역 -->
+            <div id="main-banner" class="swiper-container banner">
+                <div class="main01-nav">
 
-                <!-- prev, next -->
-                <button class="swiper-button-next"></button>
-                <button class="swiper-button-prev"></button>
-        
-            </div>
+                    <!-- prev, next -->
+                    <button class="swiper-button-next"></button>
+                    <button class="swiper-button-prev"></button>
 
-            <div id="wrapper" class="swiper-wrapper-banner">
+                </div>
 
-                <!-- <div class="swiper-slide">
+                <div id="wrapper" class="swiper-wrapper-banner">
+
+                    <!-- <div class="swiper-slide">
                     <div class="slide-txt">
                         <h1 class="slide-title"></h1>
                         <p class="slide-en-title"></p>
                     </div>
                     <img src="" alt="banner" class="banner-img">
                 </div> -->
-            </div>
-
-        </div>
-
-
-        <div id="container" class="innerwrap">
-            <!-- 카드 영역 -->
-            <div id="title-area" class="title-area">
-                <span class="label">파인더에서 원하는 영화를 찾아봐!</span>
-                <div id="sort-options">
-                    <!-- 정렬 영역 -->
-                    <select id="sort-select">
-                        <option class="option-item" value="sort-by-popularity">인기순 (기본)</option>
-                        <option class="option-item" value="sort-by-title">제목 오름차순</option>
-                        <option class="option-item" value="sort-by-date">최신 개봉순</option>
-                        <option class="option-item" value="sort-by-rating">평점 오름차순</option>
-                    </select>
                 </div>
+
             </div>
-            <div id="mycards" class="row row-cols-1 row-cols-md-4 g-4">
-                <!--div class="col">
+
+
+            <div id="container" class="innerwrap">
+                <!-- 카드 영역 -->
+                <div id="title-area" class="title-area">
+                    <span class="label">파인더에서 원하는 영화를 찾아봐!</span>
+                    <div id="sort-options">
+                        <!-- 정렬 영역 -->
+                        <select id="sort-select">
+                            <option class="option-item" value="sort-by-popularity">인기순 (기본)</option>
+                            <option class="option-item" value="sort-by-title">제목 오름차순</option>
+                            <option class="option-item" value="sort-by-date">최신 개봉순</option>
+                            <option class="option-item" value="sort-by-rating">평점 오름차순</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="mycards" class="row row-cols-1 row-cols-md-4 g-4">
+                    <!--div class="col">
                         <div class="card h-100">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
@@ -99,9 +89,9 @@
                         </div>
                     </div-->
 
+                </div>
             </div>
         </div>
-    </div>
 
 </body>
 

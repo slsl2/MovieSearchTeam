@@ -1,4 +1,5 @@
 @import "sort.css";
+@import "mediaquery.css";
 
 :root {
     --main: #955DD5;
@@ -48,15 +49,12 @@ header {
     max-width: 1250px;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .header-wrap .logo {
     font-size: 28px;
     font-weight: bold;
-    margin-right: 60px;
 }
 
 .header-wrap .logo:hover{
@@ -64,34 +62,12 @@ header {
 }
 
 
-/* 카테고리 */
-nav {
-    flex-grow: 1;
-}
-
-.gnb li {
-    display: inline-block;
-    margin-left: 15px;
-}
-
-.gnb li a{
-    font-size: 20px;
-    color: #a5a5a5;
-    transition: all .3s ease;
-}
-
-.gnb li a:hover{
-    color:#fff;
-    cursor: pointer;
-}
-
-.gnb li a.select{
-    color: #fff;
-}
-/* 카테고리 끝 */
-
-
 /* 검색창 */
+.search-wrap{
+    display: flex;
+    text-align: center;
+}
+
 #search {
     position: relative;
 }
@@ -131,8 +107,8 @@ button .xi-search {
     overflow: hidden;
     margin: 0 auto 80px;
     position: relative;
-    min-width: 1250px;
-    max-width: 3840px;
+    /*min-width: 1250px;
+    max-width: 3840px;*/
     min-height: 555px;
   }
   
@@ -202,7 +178,7 @@ button .xi-search {
     left: 500px;
     background-image: url(../assets/next.png);
   }
-  
+
   .swiper-slide > img {
     width: 100%;
     object-fit: cover

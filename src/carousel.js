@@ -55,13 +55,22 @@ function initSlider(movieList) {
 
         const slideCount = 20; //array(20)
         //슬라이드 0번째에 있는 컨텐츠의 크기를 확인 => 이미지 사이즈 : 1250px / margin : 0 10px
-        const size = 1270 
+        const size = swiper_slide.clientWidth;
 
         //currentIndex = 1로 초기값 슬라이드[1]
         let currentIndex = 1;
 
         function updateSliderPosition() {
-            wrapper.style.transform = `translateX(${-size * currentIndex + 70}px)`; //-1270  * 1 + 70
+
+            if (matchMedia("screen and (max-width: 479px)")) {
+                wrapper.style.transform = `translateX(${-size * currentIndex + 300}px)`;
+            }
+            if (matchMedia("screen and (max-width: 1024px)")) {
+                wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
+            }
+            if (matchMedia("screen and (max-width: 1920px)")) {
+                wrapper.style.transform = `translateX(${-size * currentIndex + 300}px)`;
+            }
         }
 
 
@@ -92,14 +101,16 @@ function initSlider(movieList) {
                 //첫번째 인덱스로 돌아감
                 currentIndex = 1;
                 wrapper.style.transition = "0s";
-                wrapper.style.transform = `translateX(${-size * currentIndex + 70}px)`;
+                wrapper.style.transform = `translateX(${-size * currentIndex + 300}px)`;
             }
+
             // 첫번째 인덱스일 경우
             if (currentIndex === 0) {
                 // 마지막 슬라이드 이전 슬라이드
                 currentIndex = slideCount - 2;
                 wrapper.style.transition = "0s";
-                wrapper.style.transform = `translateX(${-size * currentIndex + 70}px)`;
+                wrapper.style.transform = `translateX(${-size * currentIndex + 300}px)`;
+
             }
         });
 

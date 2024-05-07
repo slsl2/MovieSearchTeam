@@ -17,6 +17,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// let slidemenu = document.querySelector('.mobile-menu');
+// let closeBtn = document.querySelector('.closeBtn');
+// let mobileWrap = document.querySelector('.menu_bg ');
+
+// slidemenu.addEventListener('click', () => {
+//   mobileWrap.style.display = 'block';
+// });
+
+// closeBtn.addEventListener('click', () => {
+//   mobileWrap.style.display = 'none';
+// });
+
+
 // title(제목),
 // overview(내용 요약),
 // poster_path(포스터 이미지 경로),
