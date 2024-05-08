@@ -41,11 +41,11 @@
         </div>
       </div>
     </div>
-    </div>
+
     <div id="review-wrap">
       <div id="review-write-wrap">
         <span class="title-area-review">영화 리뷰</span>
-        <form id="review-form">
+        <form id="review-form" onsubmit="setReviewData(event)">
           <div id="review-form-top">
             <input type="text" id="author" placeholder="작성자" />
             <input type="password" id="password" placeholder="비밀번호" />
@@ -55,13 +55,12 @@
               id="review"
               placeholder="간단한 한줄평을 남겨주세요!"
             ></textarea>
-            <button type="submit" onclick="setReviewData()">확인</button>
+            <button type="submit">확인</button>
           </div>
         </form>
       </div>
       <div class="page-line"></div>
-      <div id="review-list-wrap">
-      </div>
+      <div id="review-list-wrap"></div>
     </div>
     <script src="./src/review.js"></script>
   </body>
