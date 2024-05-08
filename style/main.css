@@ -1,4 +1,5 @@
 @import "sort.css";
+@import "mediaquery.css";
 
 :root {
     --main: #955DD5;
@@ -48,15 +49,12 @@ header {
     max-width: 1250px;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .header-wrap .logo {
     font-size: 28px;
     font-weight: bold;
-    margin-right: 60px;
 }
 
 .header-wrap .logo:hover{
@@ -64,34 +62,12 @@ header {
 }
 
 
-/* 카테고리 */
-nav {
-    flex-grow: 1;
-}
-
-.gnb li {
-    display: inline-block;
-    margin-left: 15px;
-}
-
-.gnb li a{
-    font-size: 20px;
-    color: #a5a5a5;
-    transition: all .3s ease;
-}
-
-.gnb li a:hover{
-    color:#fff;
-    cursor: pointer;
-}
-
-.gnb li a.select{
-    color: #fff;
-}
-/* 카테고리 끝 */
-
-
 /* 검색창 */
+.search-wrap{
+    display: flex;
+    text-align: center;
+}
+
 #search {
     position: relative;
 }
@@ -131,8 +107,6 @@ button .xi-search {
     overflow: hidden;
     margin: 0 auto 80px;
     position: relative;
-    min-width: 1250px;
-    max-width: 3840px;
     min-height: 555px;
   }
   
@@ -154,7 +128,7 @@ button .xi-search {
   }
  
 
-  .banner .swiper-pagination { /* pagination */
+  .banner .swiper-pagination {
     display: table-cell;
     position: static;
     width: auto;
@@ -202,10 +176,11 @@ button .xi-search {
     left: 500px;
     background-image: url(../assets/next.png);
   }
-  
+
   .swiper-slide > img {
     width: 100%;
-    object-fit: cover
+    object-fit: cover;
+    filter: brightness(0.5);
   }
   
   .swiper-wrapper-banner {
@@ -222,9 +197,9 @@ button .xi-search {
     float: left;
     position: relative;
     overflow: hidden;
-    width: 1250px;
-    height: 550px;;
-    margin: 0 10px;
+    width: 100%;
+    height: 650px;;
+    padding: 0 10px;
     border-radius: 30px;
     
   }
@@ -244,8 +219,8 @@ button .xi-search {
   .slide-txt{
     position: absolute;
     top:80%;
-    left: 15%;
-    transform: translate(-15%, -50%);
+    left: 25%;
+    transform: translate(-25%, -50%);
     color:#fff;
     font-size: 45px;
     font-weight: bolder;
@@ -259,6 +234,7 @@ button .xi-search {
     color: transparent;
     margin: 10px 0;
   }
+
 /* 슬라이드 끝 */
 
 
