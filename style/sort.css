@@ -22,11 +22,3 @@ select {
   line-height: normal;
   cursor: pointer;
 }
-
-#search-validation {
-  position: absolute;
-  top: 30px;
-  left: 20px;
-  font-size: 9px;
-  color: var(--desc);
-}

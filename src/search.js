@@ -8,6 +8,16 @@ export const searchMovie = () => {
       // keyup : 키를 놓을 때 이벤트 발생
 
       const filterValue = searchBox.value.toLowerCase();
+
+      if (
+        filterValue.length > 10 ||
+        filterValue.includes("<") ||
+        filterValue.includes(">")
+      ) {
+        logger(validateSearch, filterValue);
+        return;
+      }
+
       const cards = cardList.querySelectorAll(".col");
       cards.forEach(function (card) {
         const titleText = card
@@ -19,6 +29,8 @@ export const searchMovie = () => {
           card.style.display = "none";
         }
       });
+
+      // 유효성 검사 기록
       logger(validateSearch, filterValue);
     });
   });
