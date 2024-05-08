@@ -1,3 +1,4 @@
+
 // 영화의 고유 식별자를 추출하는 함수
 function extractIdFromUrl(url) {
   let queryString = url.split('=')[1];
@@ -61,7 +62,8 @@ function renderReviewsForMovie() {
 }
 
 // 리뷰 추가 함수
-function setReviewData() {
+function setReviewData(e) {
+  e.preventDefault();
   let textId = document.getElementById('author').value;
   let textPassword = document.getElementById('password').value;
   let textReview = document.getElementById('review').value;
@@ -78,6 +80,9 @@ function setReviewData() {
       alert('저장완료');
       renderReviewsForMovie();
   }
+    document.getElementById("author").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("review").value = "";
 }
 
 // 리뷰 삭제 함수
@@ -106,11 +111,17 @@ function verifyPasswordAndEdit(id, password) {
           localStorage.setItem('reviewData', JSON.stringify(reviewData));
           alert('수정완료');
           renderReviewsForMovie(reviewData[reviewToEditIndex].movieId);
+
       }
+    } else {
+      alert("비밀번호가 일치하지 않습니다");
+    }
   } else {
+
       alert('비밀번호가 일치하지 않거나 해당 리뷰가 없습니다');
   }
 }
 window.onload = function() {
   renderReviewsForMovie();
 };
+
