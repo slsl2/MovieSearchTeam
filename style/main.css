@@ -21,7 +21,7 @@ body {
 .innerwrap {
   max-width: 1250px;
   height: auto;
-  margin: 0 auto;
+  margin: 0 30px;
 }
 
 /* 헤더 */
@@ -44,15 +44,15 @@ header {
 }
 
 .header-wrap {
-    max-width: 1250px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-wrap .logo {
-    font-size: 28px;
-    font-weight: bold;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .header-wrap .logo:hover {
@@ -60,9 +60,9 @@ header {
 }
 
 /* 검색창 */
-.search-wrap{
-    display: flex;
-    text-align: center;
+.search-wrap {
+  display: flex;
+  text-align: center;
 }
 
 #search {
@@ -94,113 +94,117 @@ button .xi-search {
   top: 30px;
   right: 55px;
 }
+
+#search-validation {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  font-size: 9px;
+  color: var(--desc);
+}
 /* 검색창 끝 */
 /* 헤더 끝 */
 
 /* 슬라이드 */
 
-.banner { 
-    width: 100%;
-    overflow: hidden;
-    margin: 0 auto 80px;
-    position: relative;
-    min-height: 555px;
-  }
-  
-  .banner .main01-nav {
-    display: table;
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
+.banner {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto 80px;
+  position: relative;
+  min-height: 555px;
 }
-  
-  .banner .main01-nav button[class^="btn"] {
-    display: table-cell;
-    width: 34px;
-    height: 34px;
-    vertical-align: middle;
-  }
- 
 
-  .banner .swiper-pagination {
-    display: table-cell;
-    position: static;
-    width: auto;
-    font-size: 0;
-    vertical-align: middle;
-  }
-  
-  .swiper-pagination {
-    position: absolute;
-    text-align: center;
-    transition: opacity 0.3s;
-    z-index: 10;
-  }
-  
+.banner .main01-nav {
+  display: table;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
 
-  .banner .swiper-button-prev {
-    right: 500px;
-    background-image: url(../assets/prev.png);
-  }
-  
-  .banner .swiper-button-next,
-  .banner .swiper-button-prev {
-    position: absolute;
-    top: -300px;
-    z-index: 20;
-    background-repeat: no-repeat;
-    width: 100px;
-    height: 100px;
-    background-color: transparent;
-    background-size: 100px auto;
-    font-size: 0;
-  }
-  
-  .swiper-button-next,
-  .swiper-button-prev {
-    position: absolute;
-    top: 50%;
-    z-index: 50;
-    cursor: pointer;
-    background-position: 50%;
-    background-repeat: no-repeat;
-  }
-  
-  .banner .swiper-button-next {
-    left: 500px;
-    background-image: url(../assets/next.png);
-  }
+.banner .main01-nav button[class^="btn"] {
+  display: table-cell;
+  width: 34px;
+  height: 34px;
+  vertical-align: middle;
+}
 
-  .swiper-slide > img {
-    width: 100%;
-    object-fit: cover;
-    filter: brightness(0.5);
-  }
-  
-  .swiper-wrapper-banner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: flex;
-    box-sizing: content-box;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .banner .swiper-slide {
-    float: left;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 650px;;
-    padding: 0 10px;
-    border-radius: 30px;
-    
-  }
+.banner .swiper-pagination {
+  display: table-cell;
+  position: static;
+  width: auto;
+  font-size: 0;
+  vertical-align: middle;
+}
 
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.banner .swiper-button-prev {
+  right: 500px;
+  background-image: url(../assets/prev.png);
+}
+
+.banner .swiper-button-next,
+.banner .swiper-button-prev {
+  position: absolute;
+  top: -300px;
+  z-index: 20;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  background-size: 100px auto;
+  font-size: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  z-index: 50;
+  cursor: pointer;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.banner .swiper-button-next {
+  left: 500px;
+  background-image: url(../assets/next.png);
+}
+
+.swiper-slide > img {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.swiper-wrapper-banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  box-sizing: content-box;
+  transition: 0.3s ease-in-out;
+}
+
+.banner .swiper-slide {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 650px;
+  padding: 0 10px;
+  border-radius: 30px;
+}
 
 .banner .main01-nav button[class^="btn"] {
   display: table-cell;
@@ -218,25 +222,24 @@ button .xi-search {
   vertical-align: middle;
 }
 
+.slide-txt {
+  position: absolute;
+  top: 80%;
+  left: 25%;
+  transform: translate(-25%, -50%);
+  color: #fff;
+  font-size: 45px;
+  font-weight: bolder;
+}
 
-  .slide-txt{
-    position: absolute;
-    top:80%;
-    left: 25%;
-    transform: translate(-25%, -50%);
-    color:#fff;
-    font-size: 45px;
-    font-weight: bolder;
-  }
-
-  .slide-en-title{
-    color:#fff;
-    font-size: 45px;
-    font-weight: bolder;
-    -webkit-text-stroke:1px #fff;
-    color: transparent;
-    margin: 10px 0;
-  }
+.slide-en-title {
+  color: #fff;
+  font-size: 45px;
+  font-weight: bolder;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  margin: 10px 0;
+}
 
 /* 슬라이드 끝 */
 
@@ -312,11 +315,16 @@ button .xi-search {
 /* 슬라이드 끝 */
 
 /* 카드 영역 */
+
 .title-area {
   margin: 100px 0 30px;
   font-size: 24px;
   line-height: 36px;
   color: #fff;
+}
+
+#mycards {
+  margin: 0 20px 100px 0;
 }
 
 @media (max-width: 768px) {
