@@ -54,14 +54,14 @@ function initSlider(movieList) {
 
 
         const slideCount = 20; //array(20)
-        //슬라이드 0번째에 있는 컨텐츠의 크기를 확인 => 이미지 사이즈 : 1250px / margin : 0 10px
-        const size = 1270 
+        //슬라이드 0번째에 있는 컨텐츠의 크기를 확인 => 이미지 사이즈 : 1250px 
+        const size = swiper_slide.clientWidth;
 
         //currentIndex = 1로 초기값 슬라이드[1]
         let currentIndex = 1;
 
         function updateSliderPosition() {
-            wrapper.style.transform = `translateX(${-size * currentIndex + 70}px)`; //-1270  * 1 + 70
+            wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
         }
 
 
@@ -84,6 +84,16 @@ function initSlider(movieList) {
         }
 
 
+        // 브라우저 크기가 조정될 때마다 트리거되는 이벤트 리스너, resize
+        // 슬라이더의 위치가 다시 계산되고 새창 크기에 맞게 업데이트 되도록 하기위한 기능
+        window.addEventListener("resize", function () {
+        //슬라이드 너비 가져옴 offsetWidth(컨텐츠, 패팅, 테두리 등 요소의 너비)를 사용
+        slideWidth = swiper_slide.offsetWidth;
+        console.log(slideWidth);
+        //업데이트 된 slideWidth 값을 확인하고 아래 함수를 호출해서 새너비를 기준으로 슬라이드 위치를 변경
+        updateSliderPosition();
+      });
+
 
         //슬라이드 무한루프
         wrapper.addEventListener("transitionend", () => {
@@ -92,14 +102,16 @@ function initSlider(movieList) {
                 //첫번째 인덱스로 돌아감
                 currentIndex = 1;
                 wrapper.style.transition = "0s";
-                wrapper.style.transform = `translateX(${-size * currentIndex + 70}px)`;
+                wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
             }
+
             // 첫번째 인덱스일 경우
             if (currentIndex === 0) {
                 // 마지막 슬라이드 이전 슬라이드
                 currentIndex = slideCount - 2;
                 wrapper.style.transition = "0s";
-                wrapper.style.transform = `translateX(${-size * currentIndex + 70}px)`;
+                wrapper.style.transform = `translateX(${-size * currentIndex}px)`;
+
             }
         });
 
