@@ -96,7 +96,7 @@ function verifyPasswordAndDelete(id, password) {
       alert('삭제완료');
       renderReviewsForMovie(movieId);
   } else {
-      alert('비밀번호가 일치하지 않거나 해당 리뷰가 없습니다');
+    alert("비밀번호가 일치하지 않습니다");
   }
 }
 
@@ -116,11 +116,7 @@ function verifyPasswordAndEdit(id, password) {
     } else {
       alert("비밀번호가 일치하지 않습니다");
     }
-  } else {
-
-      alert('비밀번호가 일치하지 않거나 해당 리뷰가 없습니다');
   }
-}
 window.onload = function() {
   renderReviewsForMovie();
 };
