@@ -8,7 +8,6 @@ const options = {
   },
 };
 
-// 영화 장르 ID 정보
 fetch(
   "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1",
   options
@@ -17,15 +16,20 @@ fetch(
   .then((data) => {
     let movieList = data["results"];
 
-    movieList.forEach((movie) => {
-      console.log(movie);
-      const pathId = window.location.search
-        .match(/(?<==)[0-9.]+/g)
-        .map(Number)[0];
-      if (pathId === movie.id) {
-        movieInfo(movie);
-      }
-    });
+    function loadThePage() {
+      movieList.forEach((movie) => {
+        let pathId = window.location.search.match(/(?<==)[0-9.]+/g);
+        if (pathId) {
+          pathId = pathId.map(Number)[0];
+        } else {
+          return;
+        }
+        if (pathId === movie.id) {
+          movieInfo(movie);
+        }
+      });
+    }
+    loadThePage();
   })
   .catch((err) => console.error(err));
 

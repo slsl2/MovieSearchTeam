@@ -41,7 +41,6 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-
     globalMovieData = data["results"].sort(
       (a, b) => b.popularity - a.popularity // 디폴트 정렬 = 인기순
     ); // 데이터 저장
@@ -74,10 +73,16 @@ function addCard(movie) {
     </div>
     `;
 
-  card.addEventListener("click", () => window.location.href = `detailed-page.html?id=${movie.id}`);
+  card.addEventListener(
+    "click",
+    () => (window.location.href = `detailed-page.html?id=${movie.id}`)
+  );
+  window.addEventListener(
+    "render",
+    () => (window.location.href = `detailed-page.html?id=${movie.id}`)
+  );
   mycards.append(card);
 }
-
 
 document.getElementById("sort-select").addEventListener("change", (event) => {
   const selectedOption = event.target.value;
