@@ -153,4 +153,9 @@
         width: 300px!important;
     }
     /* 모바일 메뉴 끝 */
+
+    #title-area {
+        font-size: 20px;
+      }
+    
 }
