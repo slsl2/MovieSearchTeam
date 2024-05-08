@@ -64,10 +64,11 @@ function setReviewData(e) {
     localStorage.setItem("reviewData", JSON.stringify(data));
 
     alert("저장완료");
-    textId = "";
-    textPassword = "";
-    textReview = "";
     render();
+
+    document.getElementById("author").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("review").value = "";
   }
 }
 
