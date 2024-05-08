@@ -1,16 +1,8 @@
 
 // 영화의 고유 식별자를 추출하는 함수
 function extractIdFromUrl(url) {
-  let queryString = url.split('?')[1];
-  if (!queryString) return null;
-  let params = queryString.split('&');
-  for (let i = 0; i < params.length; i++) {
-      let param = params[i].split('=');
-      if (param[0] === 'id') {
-          return param[1];
-      }
-  }
-  return null;
+  let queryString = url.split('=')[1];
+  if(!queryString) {return null} else {return queryString}
 }
 
 // 리뷰 카드 생성 함수
@@ -104,7 +96,7 @@ function verifyPasswordAndDelete(id, password) {
       alert('삭제완료');
       renderReviewsForMovie(movieId);
   } else {
-      alert('비밀번호가 일치하지 않거나 해당 리뷰가 없습니다');
+    alert("비밀번호가 일치하지 않습니다");
   }
 }
 
@@ -124,11 +116,7 @@ function verifyPasswordAndEdit(id, password) {
     } else {
       alert("비밀번호가 일치하지 않습니다");
     }
-  } else {
-
-      alert('비밀번호가 일치하지 않거나 해당 리뷰가 없습니다');
   }
-}
 window.onload = function() {
   renderReviewsForMovie();
 };
