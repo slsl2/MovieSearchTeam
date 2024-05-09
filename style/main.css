@@ -317,14 +317,14 @@ button .xi-search {
 /* 카드 영역 */
 
 .title-area {
-  margin: 100px 0 30px;
+  margin: 100px 40px 0 40px;
   font-size: 24px;
   line-height: 36px;
   color: #fff;
 }
 
 #mycards {
-  margin: 0 20px 100px 0;
+  margin: 0 50px 100px 50px;
 }
 
 @media (max-width: 768px) {
