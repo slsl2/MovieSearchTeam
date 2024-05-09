@@ -12,7 +12,10 @@ function createReview(tagName, className, html = "") {
   element.innerHTML = html;
   return element;
 }
-
+// 고유 식별자 생성 함수
+function idGenerate(){
+  return '_'+Math.random().toString(36).substr(2, 16)+'_'; 
+}
 // 해당 영화와 관련된 리뷰만 필터링하여 렌더링하는 함수
 function renderReviewsForMovie() {
   let reviewListWrap = document.getElementById('review-list-wrap');
@@ -27,7 +30,7 @@ function renderReviewsForMovie() {
       let newUl = createReview('ul', 'review-card');
       let newLi = createReview('li', 'review-li');
       let newDivTop = createReview('div', 'review-list-top');
-      let newSpanAuthor = createReview('span', 'review-author', data.id);
+      let newSpanAuthor = createReview('span', 'review-author', data.author);
       let newDivBottom = createReview('div', 'review-list-bottom');
       let newP = createReview('p', 'review-content', data.review);
       let newDivSettings = createReview('div', 'review-settings');
@@ -61,7 +64,6 @@ function renderReviewsForMovie() {
   });
 }
 
-// 리뷰 추가 함수
 function setReviewData(e) {
   e.preventDefault();
   let textId = document.getElementById('author').value;
@@ -73,7 +75,7 @@ function setReviewData(e) {
   if (textId === "" || textPassword === "" || textReview === "") {
       alert('모든 항목을 입력해주세요');
   } else {
-      let reviewPlus = { movieId: movieId, id: textId, password: textPassword, review: textReview };
+      let reviewPlus = { id: idGenerate(), movieId: movieId, author: textId, password: textPassword, review: textReview };
       let reviewData = JSON.parse(localStorage.getItem('reviewData')) || [];
       reviewData.push(reviewPlus);
       localStorage.setItem('reviewData', JSON.stringify(reviewData));
