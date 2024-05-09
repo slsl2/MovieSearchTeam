@@ -61,6 +61,7 @@ function executeValidators(validators, testValue) {
 			const e = new Error('존재하지 않는 validator 사용 ' +
 				'validatorToUse 설정 부분 확인');
 			console.error(e.stack);
+			continue;
 		}
 
 		const validateNotPassed = validator[0](testValue);
